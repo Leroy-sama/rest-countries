@@ -10,6 +10,9 @@ export default {
             fontFamily: {
                 nunito: ["Nunito Sans", "sans-serif"],
             },
+            aspectRatio: {
+                "4/3": "4 / 3",
+            },
         },
         colors: {
             darkModeElements: "hsl(209, 23%, 22%)",

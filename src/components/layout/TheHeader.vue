@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-darkModeElements p-8">
+    <header class="bg-darkModeElements px-4 py-8 md:p-8">
         <div class="flex justify-between items-center">
             <h1 class="font-bold text-lightWhite md:text-2xl">
                 Where in the world?
