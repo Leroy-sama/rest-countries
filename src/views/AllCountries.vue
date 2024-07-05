@@ -41,24 +41,26 @@
 </script>
 
 <template>
-	<main class="bg-lightModeBackground min-h-full">
+	<main
+		class="bg-lightModeBackground dark:bg-darkModeBackground min-h-screen"
+	>
 		<div
 			class="py-12 flex flex-col gap-12 mx-4 md:flex-row md:justify-between md:mx-4 xl:max-w-[1200px] xl:mx-auto"
 		>
 			<div
-				class="flex items-center gap-4 py-4 px-8 bg-lightWhite shadow-md"
+				class="flex items-center gap-4 py-4 px-8 bg-lightWhite dark:bg-darkModeElements shadow-md"
 			>
 				<Search />
 				<input
 					type="text"
 					placeholder="Search for a country..."
-					class="bg-lightWite focus:outline-none text-lightModeText w-full"
+					class="bg-lightWhite dark:bg-darkModeElements focus:outline-none text-lightModeText dark:text-lightWhite w-full"
 					v-model="searchQuery"
 				/>
 			</div>
 			<select
 				v-model="selectedRegion"
-				class="p-4 focus:outline-none bg-lightWhite text-lightModeText max-w-52 shadow-md"
+				class="p-4 focus:outline-none bg-lightWhite dark:bg-darkModeElements text-lightModeText dark:text-lightWhite max-w-52 shadow-md"
 			>
 				<option disabled selected value="">Filter by Region</option>
 				<option value="africa">Africa</option>
@@ -80,7 +82,9 @@
 					:src="country.flags.svg"
 					class="aspect-video object-cover"
 				/>
-				<div class="bg-lightWhite text-lightModeText p-6">
+				<div
+					class="bg-lightWhite dark:bg-darkModeElements text-lightModeText dark:text-lightWhite p-6"
+				>
 					<!-- // using the cca3 to find the country and render the data required!! -->
 					<RouterLink :to="{ path: `/country/${country.cca3}` }">
 						<h3 class="text-xl font-bold">

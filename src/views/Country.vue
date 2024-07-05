@@ -62,77 +62,93 @@
 </script>
 
 <template>
-	<section v-if="country" class="py-8 bg-lightModeBackground px-4">
-		<div class="flex">
-			<RouterLink
-				class="flex items-center bg-lightWhite py-2 px-6 gap-2 shadow-md"
-				to="/"
-				><Back /><span class="text-lightModeText"
-					>Back</span
-				></RouterLink
+	<section
+		v-if="country"
+		class="py-8 bg-lightModeBackground dark:bg-darkModeBackground px-4 min-h-screen"
+	>
+		<div class="xl:max-w-[1200px] xl:mx-auto">
+			<div class="flex">
+				<RouterLink
+					class="flex items-center bg-lightWhite dark:bg-darkModeElements py-2 px-6 gap-2 shadow-md"
+					to="/"
+					><Back /><span
+						class="text-lightModeText dark:text-lightWhite"
+						>Back</span
+					></RouterLink
+				>
+			</div>
+			<div
+				class="py-8 text-lightModeText dark:text-lightWhite flex flex-col justify-center md:flex-row md:items-center md:justify-between gap-12"
 			>
-		</div>
-		<div class="py-8 text-lightModeText flex flex-col md:flex-row gap-12">
-			<img
-				class="aspect-video object-cover"
-				:src="country.flags.svg"
-				alt=""
-			/>
-			<div class="grid gap-8">
-				<h3 class="py-6 text-2xl font-bold">
-					{{ country.name.common }}
-				</h3>
-				<div class="">
-					<p class="font-semibold">
-						Native name:
-						<span class="font-light">{{
-							getNativeName(country.name.nativeName)
-						}}</span>
-					</p>
-					<p class="font-semibold">
-						Population:
-						<span class="font-light">{{ country.population }}</span>
-					</p>
-					<p class="font-semibold">
-						Region:
-						<span class="font-light">{{ country.region }}</span>
-					</p>
-					<p class="font-semibold">
-						Sub-Region:
-						<span class="font-light">{{ country.subregion }}</span>
-					</p>
-					<p class="font-semibold">
-						Capital:
-						<span class="font-light">{{
-							country.capital ? country.capital.join(", ") : "N/A"
-						}}</span>
-					</p>
-				</div>
-				<div class="">
-					<p class="font-semibold">
-						Top Level Domain:
-						<span class="font-light">{{ country.tld[0] }}</span>
-					</p>
-					<p class="font-semibold">
-						Currencies:
-						<span class="font-light">{{
-							getCurrencies(country.currencies)
-						}}</span>
-					</p>
-					<p class="font-semibold">
-						Languages:
-						<span class="font-light">{{
-							getLanguages(country.languages)
-						}}</span>
-					</p>
-				</div>
-				<div class="">
-					<p class="font-semibold">
-						Border Countries:
-						<span class="font-light">{{
-							getBorders(country.borders)
-						}}</span>
-					</p>
+				<img class="max-w-[500px]" :src="country.flags.svg" alt="" />
+				<div class="grid gap-8">
+					<h3 class="text-2xl font-bold">
+						{{ country.name.common }}
+					</h3>
+					<div class="flex flex-col gap-8 xl:gap-12 xl:flex-row">
+						<div class="grid gap-4">
+							<p class="font-semibold">
+								Native name:
+								<span class="font-light">{{
+									getNativeName(country.name.nativeName)
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Population:
+								<span class="font-light">{{
+									country.population
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Region:
+								<span class="font-light">{{
+									country.region
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Sub-Region:
+								<span class="font-light">{{
+									country.subregion
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Capital:
+								<span class="font-light">{{
+									country.capital
+										? country.capital.join(", ")
+										: "N/A"
+								}}</span>
+							</p>
+						</div>
+						<div class="grid">
+							<p class="font-semibold">
+								Top Level Domain:
+								<span class="font-light">{{
+									country.tld[0]
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Currencies:
+								<span class="font-light">{{
+									getCurrencies(country.currencies)
+								}}</span>
+							</p>
+							<p class="font-semibold">
+								Languages:
+								<span class="font-light">{{
+									getLanguages(country.languages)
+								}}</span>
+							</p>
+						</div>
+					</div>
+					<div class="">
+						<p class="font-semibold">
+							Border Countries:
+							<span class="font-light">{{
+								getBorders(country.borders)
+							}}</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
