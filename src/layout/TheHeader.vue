@@ -26,7 +26,7 @@
 	import Sun from "@/assets/icons/Sun.vue";
 	import Moon from "@/assets/icons/Moon.vue";
 
-	const isDarkMode = ref(false);
+	const isDarkMode = ref(true);
 
 	const toggleDarkMode = () => {
 		isDarkMode.value = !isDarkMode.value;
